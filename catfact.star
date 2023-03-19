@@ -16,6 +16,13 @@ load("cache.star", "cache")
 
 CAT_URL = "https://catfact.ninja/fact"
 
+CAT_ICON = base64.decode("""
+iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAACKADAAQAAAABAAAACAAAAACVhHtSAAAAVElEQVQYGV1OwRGAMAwqPfdzAqfTBXTBmOQOyjWfUCAFxP3GyMF1ojaH/BQR0cZ6JxQ+aNgF8nA3Sd+KAFYFx4ro2OfrY6swZrrXqf+duDSJexdqPwAMIrIbCvXsAAAAAElFTkSuQmCC
+""")
+
+
+
+
 def main():
     """_summary_
 
@@ -43,13 +50,26 @@ def main():
         show_full_animation = True,
         child = render.Column(
             children = [
-                render.Box(
-                    width = 64,
-                    height = 8, 
-                    padding = 0,
-                    color = "#FFFFFF",
-                    child = render.Text("Cat Fact:", offset = 0, color = "#000000"),
+                
+                render.Row(
+                    expanded=True,
+                    main_align = "space_evenly",
+                    children = [
+                        render.Image(width = 8, height = 8, src = CAT_ICON,
+                        ),
+                        render.Text(" Cat Fact", offset = 0, color = "#FFFFFF",
+                        ),
+                    ],
                 ),
+                
+                # render.Box(
+                #     width = 64,
+                #     height = 8, 
+                #     padding = 0,
+                #     color = "#FFFFFF",
+                #     child = render.Text("Cat Fact:", offset = 0, color = "#000000"),
+                # ),
+
                 render.Marquee(
                     height = 24,
                     scroll_direction = "vertical",
