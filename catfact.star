@@ -22,11 +22,22 @@ def main():
     Returns:
         _type_: _description_
     """
-    rep = http.get(CAT_URL)
-    if rep.status_code != 200:
-        fail("Request failed with status %d", rep.status_code)
 
-    response = rep.json()["fact"]
+    fact_cached = cache.get("cat_fact_cached")
+    if fact_cached != None:
+        print("Hit! Displaying cached data.")
+        print(fact_cached)
+        response = fact_cached
+    else:
+        print("Miss! Calling Cat Fact API.")
+        rep = http.get(CAT_URL)
+        
+        if rep.status_code != 200:
+            fail("Request failed with status %d", rep.status_code)
+        
+        print(fact_cached)
+        response = rep.json()["fact"]
+        cache.set("cat_fact_cached", response, ttl_seconds=240)    
 
     return render.Root(
         show_full_animation = True,
@@ -58,5 +69,5 @@ def render_text(fact_text):
 
     cat_text = []
     cat_text.append(render.WrappedText(fact_text))
-    
+
     return (cat_text)
