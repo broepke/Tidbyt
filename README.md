@@ -31,4 +31,4 @@ It demonstrates a few simple concepts.
 3. base64 encoding an image to display it in the application.
 4. Layout tools to display a header as well as a vertially scrolling Marquee.
 
-![Catfact](catfact.png)
+![Catfact](catfact/catfact.png)
