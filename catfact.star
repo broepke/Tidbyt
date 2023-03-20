@@ -1,17 +1,14 @@
 """
-Applet: Cat Fact
-Summary: Cat Fact
-Description: Dissplays a Random Cat Fact
+Applet: Catfact
+Summary: A random fact about a cat
+Description: Calls an external API and retrieves a random cat fact and renders it. Rotating every 4 minutes.
 Author: broepke
-Version: 1.0
-References:
-    - https://catfact.ninja/
 """
 
-load("render.star", "render")
-load("http.star", "http")
-load("encoding/base64.star", "base64")
 load("cache.star", "cache")
+load("encoding/base64.star", "base64")
+load("http.star", "http")
+load("render.star", "render")
 
 CAT_URL = "https://catfact.ninja/fact"
 
@@ -50,7 +47,7 @@ def main():
                 render.Row(
                     expanded = True,
                     main_align = "space_evenly",
-                    cross_align= "center",
+                    cross_align = "center",
                     children = [
                         render.Image(
                             width = 8,

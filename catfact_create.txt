@@ -1,0 +1,15 @@
+Catfact
+
+A random fact about a cat
+
+Calls an external API and retrieves a random cat fact and renders it. Rotating every 4 minutes.
+
+pixlet serve apps/catfact/catfact.star
+
+
+pixlet check apps/catfact/catfact.star
+pixlet format apps/catfact/catfact.star
+pixlet lint --fix apps/catfact/catfact.star
+
+
+pixlet render apps/catfact/catfact.star --gif --magnify 10
