@@ -50,6 +50,7 @@ def main():
                 render.Row(
                     expanded = True,
                     main_align = "space_evenly",
+                    cross_align= "center",
                     children = [
                         render.Image(
                             width = 8,
@@ -57,8 +58,9 @@ def main():
                             src = CAT_ICON,
                         ),
                         render.Text(
-                            " Cat Fact",
+                            "Cat Fact:",
                             offset = 0,
+                            height = 10,
                             color = "#FFFFFF",
                         ),
                     ],
