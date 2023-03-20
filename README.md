@@ -1,8 +1,8 @@
 # Tidbyt
 
-Creating random applicaitons for my Tidbyt.  Just for fun.  
+[Tidbyt](https://tidbyt.com) is a retro-style display that lets you keep up with the things you care about, like real time sports, transit, finance and more. 
 
-https://tidbyt.dev/docs/build/build-for-tidbyt
+They have a nice [development kit](https://tidbyt.dev/docs/build/build-for-tidbyt) that allows you to create custom apps and even publish them to the Tidbyt store.
 
 ### Installing Tidbyt
 
