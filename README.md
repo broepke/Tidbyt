@@ -16,6 +16,10 @@ brew install tidbyt/tidbyt/pixlet
 pixlet serve catfact.star
 ```
 
+### Push to Device
+
+pixlet push --installation-id catfact "<<DEVICE ID>" catfact.webp
+
 ## Catfact
 
 Catfact is a simple applicaiton that displays a random fact about a cat served up from [Catfact.ninja](https://catfact.ninja/).
